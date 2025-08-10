@@ -1,0 +1,34 @@
+# Bank-Management-system-Sql-Project-in-Dbms
+📌 Project Overview
+This project is a simple **Bank Management System** built using SQL.  
+It stores and manages customer information, accounts, transactions, loans, and employee details.
+
+ 🗂 Database Schema
+The database contains the following tables:
+- **Customers**: Stores customer personal information
+- **Accounts**: Stores account details for each customer
+- **Transactions**: Tracks all deposits, withdrawals, and transfers
+- **Loans**: Stores loan details and interest rates
+- **Employees**: Stores bank staff details
+
+📊 ER Diagram
+![ER Diagram](ER_Diagram.png)
+
+## ⚙️ How to Run
+1. Open any SQL database software (MySQL, Oracle, PostgreSQL, etc.).
+2. Create a new database.
+3. Run `bank_management.sql` to create tables and insert sample data.
+4. Run queries from `sample_queries.sql` to test the system.
+
+📂 Files Included
+- `bank_management.sql` → Contains table creation (DDL) + data insertion (DML)
+- `sample_queries.sql` → Example queries for testing
+- `ER_Diagram.png` → Entity Relationship diagram of the project
+- `screenshots/` → Output screenshots
+
+📝 Example Queries
+```sql
+-- View all customers and their accounts
+SELECT c.first_name, c.last_name, a.account_type, a.balance
+FROM Customers c
+JOIN Accounts a ON c.customer_id = a.customer_id;
