@@ -1,17 +1,52 @@
-INSERT INTO Customers VALUES 
-(1, 'Rahim', 'Uddin', '1985-05-10', 'Dhaka', '017XXXXXXXX', 'rahim@example.com'),
-(2, 'Karim', 'Ali', '1990-08-20', 'Chittagong', '018XXXXXXXX', 'karim@example.com');
+-- Customers Table
+CREATE TABLE Customers (
+    customer_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    dob DATE,
+    address VARCHAR(100),
+    phone VARCHAR(15),
+    email VARCHAR(50)
+);
 
-INSERT INTO Accounts VALUES
-(101, 1, 'Savings', 50000.00, '2024-01-10'),
-(102, 2, 'Current', 150000.00, '2023-11-05');
+-- Accounts Table
+CREATE TABLE Accounts (
+    account_id INT PRIMARY KEY,
+    customer_id INT,
+    account_type VARCHAR(20), -- e.g., Savings, Current
+    balance DECIMAL(12,2),
+    open_date DATE,
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+);
 
-INSERT INTO Transactions VALUES
-(1001, 101, 'Deposit', 10000.00, '2024-02-15'),
-(1002, 102, 'Withdrawal', 5000.00, '2024-03-01');
+-- Transactions Table
+CREATE TABLE Transactions (
+    transaction_id INT PRIMARY KEY,
+    account_id INT,
+    transaction_type VARCHAR(20), -- Deposit, Withdrawal, Transfer
+    amount DECIMAL(12,2),
+    transaction_date DATE,
+    FOREIGN KEY (account_id) REFERENCES Accounts(account_id)
+);
 
-INSERT INTO Loans VALUES
-(201, 1, 'Home', 2000000.00, 7.5, '2024-05-01', '2034-05-01');
+-- Loans Table
+CREATE TABLE Loans (
+    loan_id INT PRIMARY KEY,
+    customer_id INT,
+    loan_type VARCHAR(20), -- Personal, Home, Car
+    loan_amount DECIMAL(12,2),
+    interest_rate DECIMAL(5,2),
+    start_date DATE,
+    end_date DATE,
+    FOREIGN KEY (customer_id) REFERENCES Customers(customer_id)
+);
 
-INSERT INTO Employees VALUES
-(1, 'Hasan', 'Ahmed', 'Manager', 80000.00, '2022-06-15');
+-- Employees Table
+CREATE TABLE Employees (
+    employee_id INT PRIMARY KEY,
+    first_name VARCHAR(50),
+    last_name VARCHAR(50),
+    position VARCHAR(50),
+    salary DECIMAL(12,2),
+    hire_date DATE
+);
