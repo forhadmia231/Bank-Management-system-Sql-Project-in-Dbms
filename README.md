@@ -17,14 +17,13 @@ The database contains the following tables:
 ## ⚙️ How to Run
 1. Open any SQL database software (MySQL, Oracle, PostgreSQL, etc.).
 2. Create a new database.
-3. Run `bank_management.sql` to create tables and insert sample data.
-4. Run queries from `sample_queries.sql` to test the system.
+3. Run `bank.sql` to create tables and insert sample data.
+4. Run queries from `bank_sample_queries.sql` to test the system.
 
 📂 Files Included
-- `bank_management.sql` → Contains table creation (DDL) + data insertion (DML)
-- `sample_queries.sql` → Example queries for testing
-- `ER_Diagram.png` → Entity Relationship diagram of the project
-- `screenshots/` → Output screenshots
+- `bank.sql` → Contains table creation (DDL) + data insertion (DML)
+- `bank_sample_queries.sql` → Example queries for testing
+- `ERD.pdf` → Entity Relationship diagram of the project
 
 📝 Example Queries
 ```sql
