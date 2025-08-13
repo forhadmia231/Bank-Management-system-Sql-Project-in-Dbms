@@ -1,15 +1,15 @@
 # Bank-Management-system-Sql-Project-in-Dbms
 📌 Project Overview
 This project is a simple **Bank Management System** built using SQL.  
-It stores and manages customer information, accounts, transactions, loans, and employee details.
+It stores and manages customer information,Bank information, accounts, transactions, and employee details.
 
  🗂 Database Schema
 The database contains the following tables:
-- **Customers**: Stores customer personal information
-- **Accounts**: Stores account details for each customer
-- **Transactions**: Tracks all deposits, withdrawals, and transfers
-- **Loans**: Stores loan details and interest rates
-- **Employees**: Stores bank staff details
+- Bank : Store Bank and Branch Information 
+- Customers: Stores customer personal information
+- Accounts: Stores account details for each customer
+- Transactions: Tracks all deposits, withdrawals, and transfers
+- Employees: Stores bank staff details
 
 📊 ER Diagram
 ![ER Diagram](ERD.pdf)
