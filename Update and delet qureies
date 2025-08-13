@@ -1,0 +1,28 @@
+-- Update customer phone number
+UPDATE CUSTOMER
+SET phone = '01799999999'
+WHERE customer_id = 1;
+
+-- Update account balance directly (not recommended, better via transactions)
+UPDATE ACCOUNT
+SET balance = balance + 1000
+WHERE account_id = 1;
+
+-- Change employee salary
+UPDATE EMPLOYEE
+SET salary = salary + 5000
+WHERE employee_id = 1;
+
+
+
+-- Delete a transaction
+DELETE FROM TRANSACTION
+WHERE transaction_id = 1;
+
+-- Delete an employee
+DELETE FROM EMPLOYEE
+WHERE employee_id = 2;
+
+-- Delete an account (must delete transactions first)
+DELETE FROM ACCOUNT
+WHERE account_id = 3;
