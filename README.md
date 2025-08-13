@@ -12,7 +12,7 @@ The database contains the following tables:
 - **Employees**: Stores bank staff details
 
 📊 ER Diagram
-![ER Diagram](Bank Management System ERD.pdf)
+![ER Diagram](ERD.pdf)
 
 ## ⚙️ How to Run
 1. Open any SQL database software (MySQL, Oracle, PostgreSQL, etc.).
