@@ -1,17 +1,42 @@
-INSERT INTO Customers VALUES 
-(1, 'Rahim', 'Uddin', '1985-05-10', 'Dhaka', '017XXXXXXXX', 'rahim@example.com'),
-(2, 'Karim', 'Ali', '1990-08-20', 'Chittagong', '018XXXXXXXX', 'karim@example.com');
+-- BANK
+INSERT INTO BANK (bank_name, head_office) VALUES ('National Bank', 'Dhaka Head Office');
+INSERT INTO BANK (bank_name, head_office) VALUES ('City Bank', 'Chittagong Head Office');
 
-INSERT INTO Accounts VALUES
-(101, 1, 'Savings', 50000.00, '2024-01-10'),
-(102, 2, 'Current', 150000.00, '2023-11-05');
+-- BRANCH
+INSERT INTO BRANCH (branch_name, bank_id, address) VALUES ('Dhaka Main', 1, 'Motijheel, Dhaka');
+INSERT INTO BRANCH (branch_name, bank_id, address) VALUES ('Gulshan Branch', 1, 'Gulshan, Dhaka');
+INSERT INTO BRANCH (branch_name, bank_id, address) VALUES ('Chittagong Main', 2, 'Agrabad, Chittagong');
 
-INSERT INTO Transactions VALUES
-(1001, 101, 'Deposit', 10000.00, '2024-02-15'),
-(1002, 102, 'Withdrawal', 5000.00, '2024-03-01');
+-- CUSTOMER
+INSERT INTO CUSTOMER (first_name, last_name, phone, email, address)
+VALUES ('Forhad', 'Hossain', '01711111111', 'forhad@example.com', 'Dhaka');
 
-INSERT INTO Loans VALUES
-(201, 1, 'Home', 2000000.00, 7.5, '2024-05-01', '2034-05-01');
+INSERT INTO CUSTOMER (first_name, last_name, phone, email, address)
+VALUES ('Samiul', 'Islam', '01722222222', 'samiul@example.com', 'Chittagong');
 
-INSERT INTO Employees VALUES
-(1, 'Hasan', 'Ahmed', 'Manager', 80000.00, '2022-06-15');
+INSERT INTO CUSTOMER (first_name, last_name, phone, email, address)
+VALUES ('Rafiq', 'Ahmed', '01733333333', 'rafiq@example.com', 'Sylhet');
+
+-- ACCOUNT
+INSERT INTO ACCOUNT (account_type, balance, customer_id, branch_id)
+VALUES ('Savings', 10000, 1, 1);
+
+INSERT INTO ACCOUNT (account_type, balance, customer_id, branch_id)
+VALUES ('Current', 20000, 2, 2);
+
+INSERT INTO ACCOUNT (account_type, balance, customer_id, branch_id)
+VALUES ('Savings', 15000, 3, 3);
+
+-- EMPLOYEE
+INSERT INTO EMPLOYEE (first_name, last_name, position, salary, branch_id)
+VALUES ('Mahmud', 'Rahman', 'Manager', 50000, 1);
+
+INSERT INTO EMPLOYEE (first_name, last_name, position, salary, branch_id)
+VALUES ('Aminul', 'Karim', 'Cashier', 30000, 2);
+
+-- TRANSACTION
+INSERT INTO TRANSACTION (account_id, transaction_type, amount, performed_by)
+VALUES (1, 'Deposit', 5000, 'Mahmud');
+
+INSERT INTO TRANSACTION (account_id, transaction_type, amount, performed_by)
+VALUES (2, 'Withdrawal', 2000, 'Aminul');
